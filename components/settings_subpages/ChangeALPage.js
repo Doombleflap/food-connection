@@ -9,6 +9,8 @@ import styles from '../frontendstyle';
 const {width,height} = Dimensions.get("window");
 const image = (require('../../assets/background.jpg'));
 
+/* Constructs variables and sets the default state for the newAL 
+and isLoading.*/
 class ChangeALPage extends Component {
     constructor() {
         super();
@@ -18,6 +20,11 @@ class ChangeALPage extends Component {
         };
     }
 
+    /* Saves the changes made by the user by changing the state of
+    isLoading to true, which then allows the user to change their
+    AL associated with their account.  After which, changes isLoading
+    back to false so that the changes are applied, and displays a message
+    that their AL is being changed.*/
     save = () => {
         if (this.state.newAL === this.props.user.activityLevel) return;
         this.setState({ isLoading: true });
@@ -52,6 +59,9 @@ class ChangeALPage extends Component {
         });
     }
 
+    /* The style of the text/links/variable boxes for the page when the 
+    user wants to change their AL.  Also provides a link to a page 
+    that allows a user to change their AL and save the changes they made.*/
     render() {
         if (this.state.isLoading) {
             return (
@@ -92,12 +102,15 @@ class ChangeALPage extends Component {
 }
 
 
-
+/* Sets the state of the user and returns the value associated with
+that user to be used by the rest of the class.*/
 const mapStateToProps = (state) => {
     const { user } = state
     return { user }
 };
 
+/* Maps the changes that are made to be applied/used by other classes
+associated with the application.*/
 const mapDispatchToProps = (dispatch) => {
     return {
         changeActivityLevel: (AL) => {

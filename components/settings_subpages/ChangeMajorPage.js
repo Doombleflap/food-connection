@@ -8,6 +8,8 @@ import styles from '../frontendstyle';
 const image = (require('../../assets/background.jpg'));
 const {width,height} = Dimensions.get("window");
 
+/* Constructs variables and sets the default state for the newRace 
+and isLoading.*/
 class ChangeMajorPage extends Component {
     constructor() {
         super();
@@ -17,6 +19,11 @@ class ChangeMajorPage extends Component {
         };
     }
 
+    /* Saves the changes made by the user by changing the state of
+    isLoading to true, which then allows the user to change their
+    major associated with their account.  After which, changes isLoading
+    back to false so that the changes are applied, and displays a message
+    that their major is being changed.*/
     save = () => {
         this.state.newMajor = this.state.newMajor.trim();
         if (this.state.newMajor === this.props.user.major) return;
@@ -52,6 +59,9 @@ class ChangeMajorPage extends Component {
         });
     }
 
+    /* The style of the text/links/variable boxes for the page when the 
+    user wants to change their major.  Also provides a link to a page 
+    that allows a user to change their major and save the changes they made.*/
     render() {
         if (this.state.isLoading) {
             return (
@@ -88,12 +98,15 @@ class ChangeMajorPage extends Component {
 }
 
 
-
+/* Sets the state of the user and returns the value associated with
+that user to be used by the rest of the class.*/
 const mapStateToProps = (state) => {
     const { user } = state
     return { user }
 };
 
+/* Maps the changes that are made to be applied/used by other classes
+associated with the application.*/
 const mapDispatchToProps = (dispatch) => {
     return {
         changeMajor: (major) => {
