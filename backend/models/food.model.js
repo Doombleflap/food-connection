@@ -1,6 +1,11 @@
+// Documentation by Andrew Glenn 10/22/2020
+
+// Schema to log into the database(?)
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Schema to be used in the database to create tables to receive entries
+// Each element is a column in the database
 const userSchema = new Schema({
     name: {
         type: String,
@@ -63,5 +68,6 @@ const userSchema = new Schema({
     }
 },);
 
+// Inputs schema data into a model named 'Food' (to be used for data input?)
 const Food = mongoose.model('Food', userSchema);
 module.exports = Food;

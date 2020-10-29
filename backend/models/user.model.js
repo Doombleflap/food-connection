@@ -1,12 +1,19 @@
+// Documentation by Andrew Glenn 10/22/2020
+
+// Schema to log into the database(?)
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Function to retrieve the host machines set time
+// Used in diet schema field to retrieve the last time information was recorded.
 getCurrentDay = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return today;
 }
 
+// Schema to be used in the database to create tables to receive entries
+// Each element is a column in the database
 const userSchema = new Schema({
     username: {
         type: String,
@@ -76,5 +83,6 @@ const userSchema = new Schema({
     },
 },);
 
+// Inputs schema data into a model named 'User' (to be used for data input?)
 const User = mongoose.model('User', userSchema);
 module.exports = User;
