@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import styles from '../frontendstyle';
 const image = (require('../../assets/background.jpg'));
 
+/* Constructs variables and sets the default state for the newHeight,
+isLoading, and updateSuccess.*/
 class HeightQPage extends Component {
     constructor() {
         super();
@@ -16,6 +18,11 @@ class HeightQPage extends Component {
         };
     }
 
+    /* Changes the state of isLoading to true so when a new user
+    creates an account they can save their intitial input of information  
+    to the database.  After which, it either confirms their input as valid
+    or invalid and displays the appropriate message and changes isLoading
+    back to false after the input is accepted.*/
     save = () => {
         this.setState({ isLoading: true });
         const newUser = JSON.parse(JSON.stringify(this.props.user));
@@ -50,6 +57,8 @@ class HeightQPage extends Component {
         });
     }
 
+    /* Takes the height in inches input by the user and converts it to
+    a feet and inches measurement, then returns the value as *ft. *in.*/
     convertHeight = (heightInInches) => {
         var height = Number(heightInInches);
         var feet = ~~(height / 12);
@@ -57,6 +66,9 @@ class HeightQPage extends Component {
         return feet.toString() + " ft. " + inches.toString() + " in."
     }
 
+    /* The style of the text/links/variable boxes for the page when the 
+    user wants to change their height.  Also provides a link to a page 
+    that allows a user to change their age and save the changes they made.*/
     render() {
         if (this.state.isLoading) {
             return (
@@ -95,11 +107,15 @@ class HeightQPage extends Component {
     }
 }
 
+/* Sets the state of the user and returns the value associated with
+that user to be used by the rest of the class.*/
 const mapStateToProps = (state) => {
     const { user } = state
     return { user }
 };
 
+/* Maps the changes that are made to be applied/used by other classes
+associated with the application.*/
 const mapDispatchToProps = (dispatch) => {
     return {
         changeHeight: (height) => {
