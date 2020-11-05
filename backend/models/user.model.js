@@ -1,4 +1,4 @@
-// Documentation by Andrew Glenn 10/22/2020
+/* Documentation by Andrew Glenn and Trevor Templin 11/05/2020 */
 
 // Schema to log into the database(?)
 const mongoose = require('mongoose');
@@ -80,6 +80,10 @@ const userSchema = new Schema({
             lastCalculated: getCurrentDay(),
         },
         required: true,
+    },
+    superUser:{
+        type: Boolean,
+        default: False,
     },
 },);
 

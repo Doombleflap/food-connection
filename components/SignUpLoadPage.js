@@ -1,3 +1,6 @@
+/*
+Documentation provided by Trevor Templin 10/21/2020
+*/
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import Constants from 'expo-constants';

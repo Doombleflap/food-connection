@@ -1,3 +1,7 @@
+/*
+Documentation provided by Andrew Glenn and Trevor Templin 11/5/2020
+*/
+// Import module used to interact with the backend and draw on the app
 import React, { Component } from 'react';
 import { Linking, AppRegistry, StyleSheet, Image, ImageBackground, Text, View, Button, Dimensions, Alert, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
@@ -5,8 +9,12 @@ import { connect } from 'react-redux';
 import HealthScoreCalculator from '../tools/HealthScoreCalculator';
 import styles from './frontendstyle';
 
+// Background image
 const image = (require('../assets/background.jpg'));
 
+/* Creates a constructor to hold variables to hold values for setHealthScores, save (the state),
+   and the render function to render the HTML function to the app
+*/
 class FoodPage extends Component {
     constructor(props) {
         super(props);
@@ -21,6 +29,7 @@ class FoodPage extends Component {
         this.props.setFoods(foods);
     }
 
+    // Saves data submitted to the database
     save = () => {
         this.setState({ isLoading: true });
         fetch('http://192.168.10.239:5000/users/update', {
@@ -44,6 +53,7 @@ class FoodPage extends Component {
         });
     }
 
+    // Renders HTML elements
     render() {
         if (this.state.isLoading) {
             return (
@@ -113,6 +123,7 @@ class FoodPage extends Component {
     }
 }
 
+// Updates the state of data to the interface
 const mapStateToProps = (state) => {
     const { user, global, foods } = state;
     return { user, global, foods };

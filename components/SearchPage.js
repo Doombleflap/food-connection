@@ -1,3 +1,7 @@
+/*
+Documentation provided by Andrew Glenn and Trevor Templin 11/5/2020
+*/
+// Import module used to interact with the backend and draw on the app
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Image, ImageBackground, Text, View, Button, Dimensions, Alert, TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
@@ -7,6 +11,7 @@ import styles from './frontendstyle';
 
 const image = (require('../assets/background.jpg'));
 
+// Constructor class
 class SearchPage extends Component {
     constructor(props) {
         super(props);
@@ -43,6 +48,7 @@ class SearchPage extends Component {
         );
     }
 
+    // Renders the styling to be used in the UI
     render() {
         return (
             <View style={styles.container}>
@@ -75,6 +81,7 @@ class SearchPage extends Component {
     }
 }
 
+// Updates the state of data to the interface
 const mapStateToProps = (state) => {
     const { user, foods } = state;
     return { user, foods };

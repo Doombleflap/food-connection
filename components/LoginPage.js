@@ -1,3 +1,6 @@
+/*
+Documentation provided by Andrew Glenn and Trevor Templin 11/5/2020
+*/
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Image, ImageBackground, Text, View, Button, Dimensions, Alert, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';

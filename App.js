@@ -1,3 +1,6 @@
+/*
+Documentation provided by Andrew Glenn and Trevor Templin 11/5/2020
+*/
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -17,6 +20,7 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import OpeningPage from './components/OpeningPage';
 import SignUpLoadPage from './components/SignUpLoadPage';
+import AdminPage from './components/AdminPage';
 
 /* Settings Screens */
 import ChangeUsernamePage from './components/settings_subpages/ChangeUsernamePage';
@@ -49,6 +53,8 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const store = createStore(combineReducers({user, foods, global}));
 
+// Uses Drawer module to add pages in the app
+// To do, test the super user implementation in the Drawer module
 function DrawerNavigator() {
     return (
         <Drawer.Navigator
@@ -60,8 +66,39 @@ function DrawerNavigator() {
             <Drawer.Screen name = "History"     component = {HistoryPage}   />
             <Drawer.Screen name = "Data"        component = {DataPage}      />
             <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
+            <Drawer.Screen name = "Admin"       component = {AdminPage}     />
         </Drawer.Navigator>
     );
+    // THIS NEEDS TESTING
+    /*if (this.props.user.superUser = True){
+        return (
+            <Drawer.Navigator
+                initialRouteName="Search"
+                drawerStyle={{ backgroundColor: '#664466', width: 250 }}
+                edgeWidth={125}
+                drawerContentOptions = {{labelStyle: {color: "white"}}}>
+                <Drawer.Screen name = "Search"      component = {SearchPage}    />
+                <Drawer.Screen name = "History"     component = {HistoryPage}   />
+                <Drawer.Screen name = "Data"        component = {DataPage}      />
+                <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
+                <Drawer.Screen name = "Admin"       component = {AdminPage}     />
+            </Drawer.Navigator>
+        );
+    }
+    else{
+        return (
+            <Drawer.Navigator
+                initialRouteName="Search"
+                drawerStyle={{ backgroundColor: '#664466', width: 250 }}
+                edgeWidth={125}
+                drawerContentOptions = {{labelStyle: {color: "white"}}}>
+                <Drawer.Screen name = "Search"      component = {SearchPage}    />
+                <Drawer.Screen name = "History"     component = {HistoryPage}   />
+                <Drawer.Screen name = "Data"        component = {DataPage}      />
+                <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
+            </Drawer.Navigator>
+        );
+    }*/
 }
 
 export default class App extends React.Component {
