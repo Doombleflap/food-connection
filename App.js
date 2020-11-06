@@ -21,6 +21,7 @@ import SignupPage from './components/SignupPage';
 import OpeningPage from './components/OpeningPage';
 import SignUpLoadPage from './components/SignUpLoadPage';
 import AdminPage from './components/AdminPage';
+import AchievementsPage from './components/AchievementsPage';
 
 /* Settings Screens */
 import ChangeUsernamePage from './components/settings_subpages/ChangeUsernamePage';
@@ -62,11 +63,12 @@ function DrawerNavigator() {
             drawerStyle={{ backgroundColor: '#664466', width: 250 }}
             edgeWidth={125}
             drawerContentOptions = {{labelStyle: {color: "white"}}}>
-            <Drawer.Screen name = "Search"      component = {SearchPage}    />
-            <Drawer.Screen name = "History"     component = {HistoryPage}   />
-            <Drawer.Screen name = "Data"        component = {DataPage}      />
-            <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
-            <Drawer.Screen name = "Admin"       component = {AdminPage}     />
+            <Drawer.Screen name = "Search"       component = {SearchPage}    />
+            <Drawer.Screen name = "History"      component = {HistoryPage}   />
+            <Drawer.Screen name = "Data"         component = {DataPage}      />
+            <Drawer.Screen name = "Settings"     component = {SettingsPage}  />
+            <Drawer.Screen name = "Achievements" component = {AchievementsPage} />
+            <Drawer.Screen name = "Admin"        component = {AdminPage}     />
         </Drawer.Navigator>
     );
     // THIS NEEDS TESTING
@@ -81,6 +83,7 @@ function DrawerNavigator() {
                 <Drawer.Screen name = "History"     component = {HistoryPage}   />
                 <Drawer.Screen name = "Data"        component = {DataPage}      />
                 <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
+                <Drawer.Screen name = "Achievements" component = {AchievementsPage} />
                 <Drawer.Screen name = "Admin"       component = {AdminPage}     />
             </Drawer.Navigator>
         );
@@ -96,6 +99,7 @@ function DrawerNavigator() {
                 <Drawer.Screen name = "History"     component = {HistoryPage}   />
                 <Drawer.Screen name = "Data"        component = {DataPage}      />
                 <Drawer.Screen name = "Settings"    component = {SettingsPage}  />
+                <Drawer.Screen name = "Achievements" component = {AchievementsPage} />
             </Drawer.Navigator>
         );
     }*/
