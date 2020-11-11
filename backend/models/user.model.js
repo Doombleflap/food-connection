@@ -83,7 +83,7 @@ const userSchema = new Schema({
     },
     superUser:{
         type: Boolean,
-        default: False,
+        default: false,
     },
 },);
 
