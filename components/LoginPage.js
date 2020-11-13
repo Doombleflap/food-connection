@@ -38,7 +38,7 @@ class LoginPage extends Component {
     and catches potential errors changing the state again.*/
     getFoods = () => {
         this.setState({ isLoadingFoods: true });
-        fetch('http://10.0.0.153:5000/foods', {
+        fetch('http://192.168.1.111:5000/foods', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ class LoginPage extends Component {
     and/or password displays a message notifying them.*/
     onLogin = () => {
         this.setState({ isLoading: true });
-        fetch('http://10.0.0.153:5000/users/login', {
+        fetch('http://192.168.1.111:5000/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

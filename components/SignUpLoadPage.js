@@ -33,7 +33,7 @@ class SignUpLoadPage extends Component {
     save = () => {                                                      // Saves the new user to the 
         const newUser = JSON.parse(JSON.stringify(this.props.user));    // database and displays their
         newUser.diet = diet;                                            // info on the screen.  Otherwise
-        fetch('http://10.0.0.153:5000/users/update', {                  // displays a message if an error
+        fetch('http://192.168.1.111:5000/users/update', {                  // displays a message if an error
             method: 'POST',                                             // occurs.
             headers: {
                 'Content-Type': 'application/json'
