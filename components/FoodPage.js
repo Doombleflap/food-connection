@@ -32,7 +32,7 @@ class FoodPage extends Component {
     // Saves data submitted to the database
     save = () => {
         this.setState({ isLoading: true });
-        fetch('http://192.168.10.239:5000/users/update', {
+        fetch('http://192.168.1.111:5000/users/update', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

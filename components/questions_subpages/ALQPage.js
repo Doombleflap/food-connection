@@ -25,7 +25,7 @@ class ALQPage extends Component {
         this.setState({ isLoading: true });
         const newUser = JSON.parse(JSON.stringify(this.props.user));
         newUser.activityLevel = this.state.newAL;
-        fetch('http://192.168.10.239:5000/users/update', {
+        fetch('http://192.168.1.111:5000/users/update', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

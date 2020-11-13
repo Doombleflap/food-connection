@@ -22,7 +22,7 @@ class SignupPage extends Component {
 
     getFoods = () => {
         this.setState({ isLoadingFoods: true });
-        fetch('http://192.168.10.239:5000/foods', {
+        fetch('http://192.168.1.111:5000/foods', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ class SignupPage extends Component {
 
     onSignUp = () => {
         this.setState({ isLoading: true });
-        fetch('http://192.168.10.239:5000/users/add', {
+        fetch('http://192.168.1.111:5000/users/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
