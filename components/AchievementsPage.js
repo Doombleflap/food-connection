@@ -13,12 +13,12 @@ const {width,height} = Dimensions.get("window");
 const image = (require('../assets/background.jpg'));
 
 /* Creates a constructor class to render the real page for achievements.*/
-class AchievementsPage extends React.Component {
+class AdminPage extends React.Component {
     render(){
         return (
             <View style = {styles.container}>
             <ImageBackground style= {styles.backgroundImage} source= {image}> 
-            <Text style = {styles.signupLinkText}>Achievements</Text>
+            <Text style = {styles.signupLinkText}>Admin Page</Text>
             </ImageBackground>
             </View>
         );
