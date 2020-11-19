@@ -8,13 +8,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Constants from 'expo-constants';
 import styles from './frontendstyle';
 import { render } from 'react-dom';
+import { connect } from 'react-redux';
 
 const {width,height} = Dimensions.get("window");
 const image = (require('../assets/background.jpg'));
 
 /* Creates a constructor class to render the real page for super users. If 
 the user is NOT a super user, they will recieve a rejected page*/
-export default class AdminPage {
+class AdminPage extends React.Component {
     realPageView(){
         return (
             <View style = {styles.container}>
@@ -35,7 +36,7 @@ export default class AdminPage {
     }
 
     render(){
-        if (this.props.user.superUser = True){
+        if (this.props.user.superUser = true){
             return this.realPageView
         }
         else return this.rejectedPageView;
@@ -47,3 +48,5 @@ const mapStateToProps = (state) => {
     const {user} = state;
     return {user};
 };
+
+export default connect(mapStateToProps)(AdminPage);

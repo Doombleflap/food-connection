@@ -13,7 +13,7 @@ const {width,height} = Dimensions.get("window");
 const image = (require('../assets/background.jpg'));
 
 /* Creates a constructor class to render the real page for achievements.*/
-export default class AdminPage {
+class AdminPage extends React.Component {
     render(){
         return (
             <View style = {styles.container}>
@@ -29,3 +29,5 @@ const mapStateToProps = (state) => {
     const { user, global, foods } = state;
     return { user, global, foods };
 };
+
+export default connect(mapStateToProps)(AchievementsPage);
